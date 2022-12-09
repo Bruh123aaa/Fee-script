@@ -2,12 +2,14 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 
 local win = DiscordLib:Window("Nexlus Hub")
 
-local serv = win:Server("สคิปต่างๆ", "")
+local serv = win:Server("สคิปต่างๆ", "http://www.roblox.com/asset/?id=6031075938")
+local main = win:Server("Main", "")
 
 local bf = serv:Channel("สคิป บล็อกฟุต")
 local kl = serv:Channel("สคิป คิงพีช")
 local asn = serv:Channel("สคิป อาเซนอล")
 local ffy = serv:Channel("สคิป Funky friday")
+local bkb = serv:Channel("สคิป Broken Bones")
 
 bf:Button("Neva hub บล็อกฟุต", function()
 --Blox fruit-Neva-Hub
@@ -36,6 +38,22 @@ ffy:Button("Funky friday", function()
 -- fluxteam.net
 -- Made by Wally, modded by ShowerHeadFD
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ShowerHead-FluxTeam/scripts/main/funky-friday-autoplay"))()
+end)
+
+bkb:Button("Broken Bones", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/BvfHPTQE"))()
+end)
+
+main:Slider("Walk Speed",0,100,16,function(t)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (t)
+end)
+
+main:Slider("Jump Power",0,100,16,function(t)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = (t)
+end)
+
+main:Button("Full Brightness", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/yKEGwiwj"))()
 end)
 
 _G.webhooksdiscord = "https://discord.com/api/webhooks/1050068639312781395/vU50tq3VQT0sT1VIIDxaECprBaIJqtf5LPh30XeYzm2kbGIPe7DWfpLPvlXco1Ie8jXL"
