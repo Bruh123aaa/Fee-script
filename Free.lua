@@ -18,6 +18,10 @@ bf:Button("Hoho Hub บล็อกฟุต", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
 end)
 
+bf:Button("Playback X Hub บล็อกฟุต", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NeaPchX2/Playback-X-HUB/main/PlaybackXHub-Remake.lua"))()
+end)
+
 kl:Button("One X Hub คิงพีช", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xOne2/King-Legacy/main/README.md"))()
 end)
