@@ -4303,8 +4303,8 @@ local Misc = main:CraftPage('Misc ⚙️',2)
 local AFS = main:CraftPage('Anime Fruit Simulator 🍎⚔️',1)
 
 AFS:Seperator('Auto Function')
-local Toggle1 = AFS:Toggle('Auto Skill',false,function(t)
-    _G.AutoSkill = true
+local Toggle1 = AFS:Toggle('Auto Skill',true,function(t)
+    _G.AutoSkill = t
 end)
 
 spawn(function()
