@@ -1,4 +1,6 @@
 
+
+
 do  local ui =  game:GetService("CoreGui").RobloxGui.Modules.Profile:FindFirstChild("G3LIB")  if ui then ui:Destroy() end end
 
 
@@ -4298,9 +4300,12 @@ function Ui:Window(text)
 end
 
 local Win = Ui:Window('Hurricane HUB')
-local main = Win:CraftTab('Main')
-local Misc = main:CraftPage('Misc ⚙️',2)
-local AFS = main:CraftPage('Anime Fruit Simulator 🍎⚔️',1)
+local AFST = Win:CraftTab('Anime Fruit Sim')
+local FRT = Win:CraftTab('🚀 Fly Race!')
+local MiscT = Win:CraftTab('Misc ⚙️')
+local AFS = AFST:CraftPage('Anime Fruit Simulator 🍎⚔️',1)
+local FR = FRT:CraftPage('🚀 Fly Race!',1)
+local Misc = MiscT:CraftPage('Misc ⚙️',1)
 
 AFS:Seperator('Auto Function')
 local Toggle1 = AFS:Toggle('Auto Skill',true,function(t)
@@ -4387,6 +4392,24 @@ end
 )
 
 
+
+FR:Seperator('Auto Function')
+    local Toggle1 = FR:Toggle('Auto Collect Rocket',true,function(ACR)
+_G.AutoCollectRocket = ACR
+    end
+    )
+
+spawn(function()
+    while _G.AutoCollectRocket do wait(0.1)
+
+        local Rocket = game.Players.LocalPlayer.Character.HumanoidRootPart
+        for i,v in pairs(game.Workspace.Camera:GetChildren()) do
+        v.CFrame = Rocket.CFrame
+        end
+        end
+    end)
+
+
 Misc:Seperator('TP To Players')
 
 players = {}
@@ -4425,3 +4448,4 @@ Misc:Seperator('Client')
 Misc:Button("Rejoin Server",function()
     game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 end)
+
